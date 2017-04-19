@@ -38,7 +38,7 @@ public class MovieTopRatedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_top_rated);
         //retroClient = new RetroClient();
 
-       // topRateAdapter = new MovieTopRateAdapter(movieTopRateds);
+        // topRateAdapter = new MovieTopRateAdapter(movieTopRateds);
 
         recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

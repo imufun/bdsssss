@@ -164,7 +164,7 @@ public class MovieTopRated {
     }
 
     public void setVoteAverage(double voteAverage) {
-        VoteAverage = voteAverage;
+        this.VoteAverage = voteAverage;
     }
 
 
@@ -187,4 +187,6 @@ public class MovieTopRated {
                 ", VoteAverage=" + VoteAverage +
                 '}';
     }
+
+
 }
