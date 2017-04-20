@@ -160,7 +160,7 @@ public class MovieTopRated {
     }
 
     public double getVoteAverage() {
-        return VoteAverage;
+        return (int) Math.round(VoteAverage);
     }
 
     public void setVoteAverage(double voteAverage) {

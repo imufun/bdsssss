@@ -23,5 +23,7 @@ public interface ApiInterfaceService {
     @GET("movie/{id}")
     Call<MovieTopRatedResponse> getMovieTopRatedDetails(@Path("id") int id, @Query("api_key") String api_key);
 
+    @GET("movie/top_rated")
+    Call<MovieTopRatedResponse> getMovieTopRated(@Query("api_key") String apiKey, @Query("page") int pageIndex);
 
 }
