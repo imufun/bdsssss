@@ -55,6 +55,10 @@ public class MovieTopRated {
         this.VoteAverage = voteAverage;
     }
 
+    public MovieTopRated() {
+
+    }
+
     public String getPosterPath() {
         return PosterPath;
     }

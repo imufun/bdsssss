@@ -2,10 +2,13 @@ package bdshop2.imran.com.bdshop3;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,10 +30,18 @@ public class MovieTopRatedActivity extends AppCompatActivity {
     // private RetroClient retroClient;
     ProgressDialog dialog;
 
+    ProgressBar progressBar;
     private RecyclerView recyclerView;
     private MovieTopRateAdapter topRateAdapter;
+    LinearLayoutManager linearLayoutManager;
 
-    //ArrayList<MovieTopRated> movieTopRateds ;
+    private static final int PAGE_START = 1;
+    private boolean isLoading = false;
+    private boolean isLastPage = false;
+    // limiting to 5 for this tutorial, since total pages in actual API is very large. Feel free to modify.
+    private int TOTAL_PAGES = 5;
+    private int currentPage = PAGE_START;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +50,10 @@ public class MovieTopRatedActivity extends AppCompatActivity {
         //retroClient = new RetroClient();
 
         // topRateAdapter = new MovieTopRateAdapter(movieTopRateds);
-
+        progressBar = (ProgressBar) findViewById(R.id.main_progress);
         recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
 
         if (api_key.isEmpty()) {
@@ -59,7 +71,6 @@ public class MovieTopRatedActivity extends AppCompatActivity {
             dialog.show();
         }
         //  https://api.themoviedb.org/3/movie/top_rated?=de05a59a85ef1e7797de8d4a6d343d0e
-
         ApiInterfaceService apiInterfaceService = RetroClient.getRetrofitInstanceMovie().create(ApiInterfaceService.class);
 
         Call<MovieTopRatedResponse> call = apiInterfaceService.getMovieTopRated(api_key);
@@ -70,6 +81,7 @@ public class MovieTopRatedActivity extends AppCompatActivity {
                 dialog.dismiss();
                 List<MovieTopRated> movieTopRates = response.body().getMovieResult();
                 recyclerView.setAdapter(new MovieTopRateAdapter((ArrayList<MovieTopRated>) movieTopRates, R.layout.layout_row_top_rated, getApplicationContext()));
+
                 Log.d(TAG, "Number of movies received: " + movieTopRates.size());
 
             }
@@ -81,4 +93,6 @@ public class MovieTopRatedActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

@@ -15,13 +15,17 @@
         card_view:cardCornerRadius="2dp"
         card_view:contentPadding="10dp">
 
+        <ProgressBar
+            android:id="@+id/movie_progress"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_gravity="center"  />
 
         <ImageView
             android:id="@+id/imagethumbnil"
             android:layout_width="150dp"
-            android:scaleType="centerCrop"
             android:layout_height="100dp"
-            android:layout_gravity="right" />
+            android:layout_gravity="right"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/Titile"
