@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Prodcut {
 
-    String imageurl = "http://localhost:8080/Book/admin/";
+    String imageurl = "http://192.168.2.123:8080/Book/admin/";
     @SerializedName("productName")
     @Expose
     private String ProductName;
