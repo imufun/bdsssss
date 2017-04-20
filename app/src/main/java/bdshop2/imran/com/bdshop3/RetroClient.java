@@ -13,6 +13,7 @@ public class RetroClient {
     // private static final String MOVIE_URL="https://api.themoviedb.org/3/movie/550?api_key=de05a59a85ef1e7797de8d4a6d343d0e";
 
     private static final String MOVIE_URL = "https://api.themoviedb.org/3/";
+    private static final String Store = "http://192.168.2.123:8080/AndroidApi/row-api/";
 
 
 
@@ -29,6 +30,15 @@ public class RetroClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
+
+
+    public static Retrofit getRetrofitInstanceStore() {
+        return new Retrofit.Builder()
+                .baseUrl(Store)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+    }
+
 
     public static ApiInterfaceService getContactJSON() {
         return getRetrofitInstance().create(ApiInterfaceService.class);

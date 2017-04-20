@@ -2,6 +2,7 @@ package bdshop2.imran.com.bdshop3;
 
 import bdshop2.imran.com.bdshop3.apisresponse.ContactResponse;
 import bdshop2.imran.com.bdshop3.apisresponse.MovieTopRatedResponse;
+import bdshop2.imran.com.bdshop3.apisresponse.ProductResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -25,5 +26,8 @@ public interface ApiInterfaceService {
 
     @GET("movie/top_rated")
     Call<MovieTopRatedResponse> getMovieTopRated(@Query("api_key") String apiKey, @Query("page") int pageIndex);
+
+    @GET("ProdictList.php")
+    Call<ProductResponse> getProductResponse();
 
 }
