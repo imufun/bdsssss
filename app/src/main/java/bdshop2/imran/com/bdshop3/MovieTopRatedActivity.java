@@ -2,13 +2,11 @@ package bdshop2.imran.com.bdshop3;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.ProgressBar;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -30,7 +28,7 @@ public class MovieTopRatedActivity extends AppCompatActivity {
     // private RetroClient retroClient;
     ProgressDialog dialog;
 
-    ProgressBar progressBar;
+    // ProgressBar progressBar;
     private RecyclerView recyclerView;
     private MovieTopRateAdapter topRateAdapter;
     LinearLayoutManager linearLayoutManager;
@@ -50,9 +48,10 @@ public class MovieTopRatedActivity extends AppCompatActivity {
         //retroClient = new RetroClient();
 
         // topRateAdapter = new MovieTopRateAdapter(movieTopRateds);
-        progressBar = (ProgressBar) findViewById(R.id.main_progress);
+        //   progressBar = (ProgressBar) findViewById(R.id.main_progress);
         recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
 
 

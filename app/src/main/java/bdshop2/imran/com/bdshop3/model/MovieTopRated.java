@@ -9,6 +9,9 @@ import java.util.ArrayList;
  */
 
 public class MovieTopRated {
+
+    public static final String TMDB_IMAGE_PATH = "http://image.tmdb.org/t/p/w500";
+
     @SerializedName("poster_path")
     private String PosterPath;
     @SerializedName("adult")
@@ -60,7 +63,7 @@ public class MovieTopRated {
     }
 
     public String getPosterPath() {
-        return PosterPath;
+        return TMDB_IMAGE_PATH + PosterPath;
     }
 
     public void setPosterPath(String posterPath) {
@@ -164,7 +167,8 @@ public class MovieTopRated {
     }
 
     public double getVoteAverage() {
-        return (int) Math.round(VoteAverage);
+        //return (int) Math.round(VoteAverage);
+        return  Math.round(VoteAverage);
     }
 
     public void setVoteAverage(double voteAverage) {
