@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 import bdshop2.imran.com.bdshop3.adapter.ProductAdapter;
 import bdshop2.imran.com.bdshop3.apisresponse.ProductResponse;
-import bdshop2.imran.com.bdshop3.model.Prodcut;
+import bdshop2.imran.com.bdshop3.model.Product;
 import bdshop2.imran.com.bdshop3.utils.InternetConnection;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -67,10 +67,10 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ProductResponse> call, Response<ProductResponse> response) {
                 dialog.dismiss();
-                ArrayList<Prodcut> prodcuts = response.body().getProdcuts();
-                recyclerView.setAdapter(new ProductAdapter(prodcuts, R.layout.layout_row_product, getApplicationContext()));
+                ArrayList<Product> products = response.body().getProducts();
+                recyclerView.setAdapter(new ProductAdapter(products, R.layout.layout_row_product, getApplicationContext()));
 
-                Log.d(TAG, "Number of movies received: " + prodcuts.size());
+                Log.d(TAG, "Number of movies received: " + products.size());
 
             }
 

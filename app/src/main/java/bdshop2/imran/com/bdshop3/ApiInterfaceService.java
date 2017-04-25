@@ -27,7 +27,7 @@ public interface ApiInterfaceService {
     @GET("movie/top_rated")
     Call<MovieTopRatedResponse> getMovieTopRated(@Query("api_key") String apiKey, @Query("page") int pageIndex);
 
-    @GET("ProdictList.php")
+    @GET("product")
     Call<ProductResponse> getProductResponse();
 
 }

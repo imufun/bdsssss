@@ -7,9 +7,9 @@ import com.google.gson.annotations.SerializedName;
  * Created by imran on 4/20/2017.
  */
 
-public class Prodcut {
+public class Product {
 
-    String imageurl = "http://192.168.2.123:8080/Book/admin/";
+   //String imageurl = "http://192.168.56.1:8080/Book/admin/";
     @SerializedName("productName")
     @Expose
     private String ProductName;
@@ -26,7 +26,7 @@ public class Prodcut {
     @Expose
     private String image;
 
-    public Prodcut(String productName, String body, String price, String image) {
+    public Product(String productName, String body, String price, String image) {
         ProductName = productName;
         this.body = body;
         this.price = price;
@@ -58,7 +58,7 @@ public class Prodcut {
     }
 
     public String getImage() {
-        return imageurl + image;
+        return   image;
     }
 
     public void setImage(String image) {

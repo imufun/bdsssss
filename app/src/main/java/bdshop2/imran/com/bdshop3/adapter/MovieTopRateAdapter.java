@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 import bdshop2.imran.com.bdshop3.R;
 import bdshop2.imran.com.bdshop3.model.MovieTopRated;
-import bdshop2.imran.com.bdshop3.model.Prodcut;
 
 /**
  * Created by imran on 4/19/2017.
